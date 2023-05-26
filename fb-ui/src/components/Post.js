@@ -1,5 +1,5 @@
 import { useSession } from "next-auth/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import { FiThumbsUp } from "react-icons/fi";
 import { FaRegCommentAlt } from "react-icons/fa";
