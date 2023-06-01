@@ -5,6 +5,8 @@ import { HiOutlineVideoCamera } from "react-icons/hi";
 import { IoMdPhotos } from "react-icons/io";
 import { BsEmojiSmile } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { Provider, useDispatch } from "react-redux";
+import { addPost } from "../../public/src/features/postSlice";
 
 const CreatePost = () => {
   const FB_ENDPOINT = "";
@@ -12,6 +14,7 @@ const CreatePost = () => {
   const inputRef = useRef(null);
   const hiddenFileInput = useRef(null);
   const [imageToPost, setImageToPost] = useState(null);
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     hiddenFileInput.current.click();
@@ -46,8 +49,9 @@ const CreatePost = () => {
       .post(FB_ENDPOINT, formData, {
         headers: { Accept: "application/json" },
       })
-      .then((res) => {
+      .then((response) => {
         inputRef.current.value = "";
+        dispatch(addPost(response.data));
         removeImage();
       })
       .catch((err) => {
