@@ -9,6 +9,7 @@ const Login = () => {
         src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
         height={240}
         width={240}
+        alt="Logo"
       />
       <a
         onClick={signIn}

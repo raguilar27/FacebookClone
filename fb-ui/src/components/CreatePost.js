@@ -53,6 +53,7 @@ const CreatePost = () => {
       .then((response) => {
         inputRef.current.value = "";
         dispatch(addPost(response.data));
+        console.log(response.data);
         removeImage();
       })
       .catch((err) => {
@@ -68,6 +69,7 @@ const CreatePost = () => {
           height={40}
           width={40}
           className="rounded-full cursor-pointer"
+          alt="Profile Pic"
         />
         <form className="flex flex-1">
           <input
@@ -84,7 +86,11 @@ const CreatePost = () => {
           onClick={removeImage}
           className="flex items-center px-4 py-2 space-x-4 filter hover:brightness-110 transition duration-150 cursor-pointer"
         >
-          <img src={imageToPost} className="h-10 object-contain" />
+          <img
+            src={imageToPost}
+            className="h-10 object-contain"
+            alt="Post image"
+          />
           <RiDeleteBin6Line className="h-8 hover:text-red-500" />
         </div>
       )}

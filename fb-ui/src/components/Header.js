@@ -18,6 +18,7 @@ const Header = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/800px-2021_Facebook_icon.svg.png"
           height={40}
           width={40}
+          alt="Logo"
         />
         <div className="flex items-center space-x-2 px-2 ml-2 rounded-full bg-gray-100 text-gray-500">
           <HiOutlineSearch size={20} />
@@ -56,6 +57,7 @@ const Header = () => {
           height={40}
           width={40}
           className="rounded-full cursor-pointer"
+          alt="Profile pic"
         />
         <p className="hidden xl:inline-flex semi-bold text-sm whitespace-nowrap p-3 max-w-xs">
           {session?.user.name.split(" ")[0]}
