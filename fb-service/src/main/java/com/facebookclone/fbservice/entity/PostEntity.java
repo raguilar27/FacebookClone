@@ -21,11 +21,13 @@ public class PostEntity {
     private String id;
 
     @Lob
+    @Column(name = "post", columnDefinition = "LONGBLOB")
     private String post;
     private String name;
     private String email;
 
     @Lob
+    @Column(name = "image", columnDefinition = "LONGBLOB")
     private String image;
     private String profilePic;
     private String timeStamp;
