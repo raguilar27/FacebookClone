@@ -12,6 +12,7 @@ const Posts = () => {
   useEffect(() => {
     const fetchData = () => {
       const response = axios.get(FB_ENDPOINT).then((response) => {
+        console.log(response.data);
         dispatch(addAllPost(response.data));
       });
     };
@@ -21,7 +22,7 @@ const Posts = () => {
   return (
     <div>
       {posts.map((post) => (
-        <Post post={post} key={post.dispatch} />
+        <Post post={post} key={post.id} />
       ))}
     </div>
   );
