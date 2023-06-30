@@ -7,9 +7,10 @@ import { BsEmojiSmile } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Provider, useDispatch } from "react-redux";
 import { addPost } from "../../public/src/features/postSlice";
+import axios from "axios";
 
 const CreatePost = () => {
-  const FB_ENDPOINT = "";
+  const FB_ENDPOINT = "http://localhost:8080/api/v1/post";
   const { data: session } = useSession();
   const inputRef = useRef(null);
   const hiddenFileInput = useRef(null);
@@ -52,6 +53,7 @@ const CreatePost = () => {
       .then((response) => {
         inputRef.current.value = "";
         dispatch(addPost(response.data));
+        console.log(response.data);
         removeImage();
       })
       .catch((err) => {
@@ -67,6 +69,7 @@ const CreatePost = () => {
           height={40}
           width={40}
           className="rounded-full cursor-pointer"
+          alt="Profile Pic"
         />
         <form className="flex flex-1">
           <input
@@ -83,7 +86,11 @@ const CreatePost = () => {
           onClick={removeImage}
           className="flex items-center px-4 py-2 space-x-4 filter hover:brightness-110 transition duration-150 cursor-pointer"
         >
-          <img src={imageToPost} className="h-10 object-contain" />
+          <img
+            src={imageToPost}
+            className="h-10 object-contain"
+            alt="Post image"
+          />
           <RiDeleteBin6Line className="h-8 hover:text-red-500" />
         </div>
       )}

@@ -24,6 +24,7 @@ const Sidebar = () => {
           height={40}
           width={40}
           className="rounded-full cursor-pointer"
+          alt="Profile pic"
         />
         <p className="hidden sm:inline-flex font-medium">
           {session?.user.name}

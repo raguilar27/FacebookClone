@@ -1,14 +1,16 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 
 const Contacts = ({ name, src, status }) => {
   return (
-    <div className="flex items-center space-x-2 py-2 pl-1 hover:bg-gray-200 rounded-l-xl cursor-pointer relative">
+    <div className="flex items-center space-x-2 py-2 pl-1 relative cursor-pointer hover:bg-gray-200 rounded-l-xl">
       <Image
+        objectFit="cover"
         src={src}
         height={40}
         width={40}
-        className="rounded-full cursor-pointer"
+        className="rounded-full"
+        alt="Profile pic"
       />
       <p className="hidden sm:inline-flex text-sm">{name}</p>
       {status === "Online" && (
