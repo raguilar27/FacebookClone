@@ -4,7 +4,7 @@ import Posts from "./Posts";
 
 const Feed = () => {
   return (
-    <div className="flex-grow h-screen pt-6 mr-6 overflow-y-auto no-scrollbar">
+    <div className="flex-grow h-screen pt-6 pb-6 mr-6 overflow-y-auto no-scrollbar">
       <div className="mx-auto max-w-md md:max-w-l lg:max-w-2xl">
         {/* Create Post Box */}
         <CreatePost />
