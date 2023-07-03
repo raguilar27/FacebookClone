@@ -6,8 +6,7 @@ import com.facebookclone.fbservice.repository.PostEntityRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -62,6 +61,9 @@ public class PostServiceImpl implements PostService {
                                 .profilePic(postEntity.getProfilePic())
                                 .build())
                 .collect(Collectors.toList());
+
+        Collections.sort(posts, Comparator.comparing(Post::getTimeStamp));
+        Collections.reverse(posts);
 
         return posts;
     }
