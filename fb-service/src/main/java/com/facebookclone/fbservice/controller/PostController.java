@@ -21,28 +21,38 @@ public class PostController {
 
     @PostMapping
     public Post addPost(@RequestParam Map<String,String> requestParams) throws Exception {
-        String strpost = requestParams.get("post");
-        String email = requestParams.get("email");
-        String name = requestParams.get("name");
-        String file = requestParams.get("file");
-        String profilePic = requestParams.get("profilePic");
+        try{
+            String strpost = requestParams.get("post");
+            String email = requestParams.get("email");
+            String name = requestParams.get("name");
+            String file = requestParams.get("file");
+            String profilePic = requestParams.get("profilePic");
 
-        Post post = Post.builder()
-                .file(file)
-                .name(name)
-                .email(email)
-                .post(strpost)
-                .profilePic(profilePic)
-                .timeStamp(new Date().toString())
-                .build();
+            Post post = Post.builder()
+                    .file(file)
+                    .name(name)
+                    .email(email)
+                    .post(strpost)
+                    .profilePic(profilePic)
+                    .timeStamp(new Date().toString())
+                    .build();
 
-        post = postService.addPost(post);
+            post = postService.addPost(post);
 
-        return post;
+            return post;
+
+        } catch (Exception e) {
+            throw new Exception("Error in api/v1/post - addPost() request: " + e );
+        }
     }
 
     @GetMapping
-    public List<Post> getPost() {
-        return postService.getPost();
+    public List<Post> getPost() throws Exception {
+        try{
+            return postService.getPost();
+        } catch (Exception e) {
+            throw new Exception("Error in api/v1/post - getPost() request: " + e );
+        }
     }
+
 }

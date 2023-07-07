@@ -7,5 +7,5 @@ import java.util.List;
 public interface PostService {
     Post addPost(Post post) throws Exception;
 
-    List<Post> getPost();
+    List<Post> getPost() throws Exception;
 }
