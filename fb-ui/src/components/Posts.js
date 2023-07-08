@@ -5,7 +5,8 @@ import { addAllPost, selectPost } from "../../public/src/features/postSlice";
 import axios from "axios";
 
 const Posts = () => {
-  const FB_ENDPOINT = "http://localhost:8080/api/v1/post";
+  const FB_ENDPOINT =
+    "https://fbc-backend-b3dc8f917816.herokuapp.com/api/v1/post";
   const dispatch = useDispatch();
   const posts = useSelector(selectPost);
 
