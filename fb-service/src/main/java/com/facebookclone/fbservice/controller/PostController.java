@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(value="http://localhost:3000")
+@CrossOrigin(value="https://fbclanding.netlify.app")
 @RestController
 @RequestMapping("/api/v1/post")
 public class PostController {
