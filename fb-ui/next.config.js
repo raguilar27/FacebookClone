@@ -8,6 +8,7 @@ const nextConfig = {
       "platform-lookaside.fbsbx.com",
       "images.pexels.com",
     ],
+    unoptimized: true,
   },
 };
 

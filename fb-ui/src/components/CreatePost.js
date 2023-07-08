@@ -10,7 +10,8 @@ import { addPost } from "../../public/src/features/postSlice";
 import axios from "axios";
 
 const CreatePost = () => {
-  const FB_ENDPOINT = "http://localhost:8080/api/v1/post";
+  const POST_FB_ENDPOINT =
+    "https://fbc-backend-b3dc8f917816.herokuapp.com/api/v1/post";
   const { data: session } = useSession();
   const inputRef = useRef(null);
   const hiddenFileInput = useRef(null);
@@ -47,13 +48,13 @@ const CreatePost = () => {
     formData.append("profilePic", session?.user.image);
 
     axios
-      .post(FB_ENDPOINT, formData, {
+      .post(POST_FB_ENDPOINT, formData, {
         headers: { Accept: "application/json" },
       })
       .then((response) => {
         inputRef.current.value = "";
         dispatch(addPost(response.data));
-        console.log(response.data);
+        //console.log(response.data);
         removeImage();
       })
       .catch((err) => {

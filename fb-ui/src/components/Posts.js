@@ -5,14 +5,15 @@ import { addAllPost, selectPost } from "../../public/src/features/postSlice";
 import axios from "axios";
 
 const Posts = () => {
-  const FB_ENDPOINT = "http://localhost:8080/api/v1/post";
+  const POST_FB_ENDPOINT =
+    "https://fbc-backend-b3dc8f917816.herokuapp.com/api/v1/post";
   const dispatch = useDispatch();
   const posts = useSelector(selectPost);
 
   useEffect(() => {
     const fetchData = () => {
-      const response = axios.get(FB_ENDPOINT).then((response) => {
-        console.log(response.data);
+      const response = axios.get(POST_FB_ENDPOINT).then((response) => {
+        //console.log(response.data);
         dispatch(addAllPost(response.data));
       });
     };
