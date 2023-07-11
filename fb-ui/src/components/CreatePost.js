@@ -10,7 +10,7 @@ import { addPost } from "../../public/src/features/postSlice";
 import axios from "axios";
 
 const CreatePost = () => {
-  const POST_FB_ENDPOINT = "http://localhost:3000/api/v1/post";
+  const POST_FB_ENDPOINT = "http://localhost:8080/api/v1/post";
   const { data: session } = useSession();
   const inputRef = useRef(null);
   const hiddenFileInput = useRef(null);
