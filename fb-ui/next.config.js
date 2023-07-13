@@ -7,6 +7,7 @@ const nextConfig = {
       "static.xx.fbcdn.net",
       "platform-lookaside.fbsbx.com",
       "images.pexels.com",
+      "static.xx.fbcdn.net",
     ],
     unoptimized: true,
   },
