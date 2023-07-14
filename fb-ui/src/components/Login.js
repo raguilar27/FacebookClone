@@ -19,7 +19,7 @@ const Login = () => {
         </h2>
       </div>
       {/*Right side*/}
-      <div className="bg-white flex flex-col p-5 rounded-xl w-1/3 shadow-xl min-w-[400px]">
+      <div className="bg-white flex flex-col p-5 rounded-xl w-400px shadow-xl min-w-[400px]">
         <input
           className="my-2 border border-l border-gray-300 p-3 rounded-md focus:outline-1 outline-blue-600"
           type="text"

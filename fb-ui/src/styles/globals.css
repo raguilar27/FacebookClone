@@ -19,6 +19,12 @@
     }
   }
 
+  .half-width {
+    @media only screen and (max-width: 900px) {
+      width: auto;
+    }
+  }
+
   .center-img {
     @media only screen and (max-width: 900px) {
       display: flex;
